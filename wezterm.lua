@@ -31,7 +31,7 @@ config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
 
 -- Font
-config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Bold", italic = false })
+config.font = wezterm.font({ family = "JetBrainsMono NF" }, { weight = "Bold" })
 config.font_size = 13.0
 
 -- Key Binding Config
