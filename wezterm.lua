@@ -25,7 +25,7 @@ config.use_fancy_tab_bar = false
 config.color_scheme = "tokyonight_night"
 
 -- Launch TMUX with the last session
-config.default_prog = { "/opt/homebrew/bin/tmux", "attach-session" }
+-- config.default_prog = { "/opt/homebrew/bin/tmux", "attach-session" }
 
 config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
