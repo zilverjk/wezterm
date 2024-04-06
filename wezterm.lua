@@ -19,6 +19,10 @@ config.use_fancy_tab_bar = false
 config.color_scheme = "tokyonight_night"
 config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
+config.scrollback_lines = 3000
+config.enable_wayland = false
+config.update_check_interval = "never"
+config.check_for_updates = false
 
 -- Font
 config.font = wezterm.font({ family = "MonoLisaNerdFontCompleteMono Nerd Font" }, { weight = "Bold" })
