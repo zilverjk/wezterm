@@ -1,47 +1,34 @@
 local wezterm = require("wezterm")
-local mux = wezterm.mux
-local config = {}
-
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
-if wezterm.config_builder then
-  config = wezterm.config_builder()
-end
-
--- Launch WezTerm as fullscreen window
-wezterm.on("gui-startup", function(cmd)
-  local _, _, window = mux.spawn_window(cmd or {})
-  window:gui_window():toggle_fullscreen()
-end)
+local config = wezterm.config_builder()
 
 config.native_macos_fullscreen_mode = true
 config.use_fancy_tab_bar = false
 config.color_scheme = "tokyonight_night"
 config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
-config.scrollback_lines = 3000
-config.enable_wayland = false
+config.window_decorations = "RESIZE"
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 11
+config.default_cursor_style = "SteadyBlock"
+config.cursor_blink_ease_out = "Constant"
+config.cursor_blink_ease_in = "Constant"
+config.cursor_blink_rate = 0
+config.max_fps = 120
+config.window_padding = {
+  left = 2,
+  right = 2,
+  top = 15,
+  bottom = 0,
+}
+-- config.scrollback_lines = 3000
 config.check_for_updates = false
-config.warn_about_missing_glyphs = false
-
--- Font
-config.font = wezterm.font({ family = "MonoLisaNerdFontCompleteMono Nerd Font" }, { weight = "Bold" })
-config.font_size = 12.0
+config.font = wezterm.font({ family = "MonoLisaNerdFontCompleteMono Nerd Font" })
+config.font_size = 13.0
 config.keys = {
   {
-    key = "-",
-    mods = "CTRL",
-    action = wezterm.action.DisableDefaultAssignment,
-  },
-  {
-    key = "=",
-    mods = "CTRL",
-    action = wezterm.action.DisableDefaultAssignment,
-  },
-  {
-    key = "|",
-    mods = "CTRL",
-    action = wezterm.action.DisableDefaultAssignment,
+    key = "n",
+    mods = "SHIFT|CTRL",
+    action = wezterm.action.ToggleFullScreen,
   },
 }
 
