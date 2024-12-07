@@ -22,7 +22,7 @@ config.window_padding = {
 }
 -- config.scrollback_lines = 3000
 config.check_for_updates = false
-config.font = wezterm.font({ family = "MonoLisaNerdFontCompleteMono Nerd Font" })
+config.font = wezterm.font({ family = "MonoLisaNerdFontCompleteMonoNerdFont Nerd Font" })
 config.font_size = 13.0
 config.keys = {
   {
